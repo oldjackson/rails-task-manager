@@ -4,7 +4,7 @@
   <form>
     <% @tasks.each_with_index do |task, i| %>
     <div>
-      <input type="checkbox" id="<%= i + 1 %>" name="completed" value="on" <%= task.completed ? "checked" : "" %>>
+      <input type="checkbox" id="<%= i + 1 %>" name="completed" value="on" <%= task.completed ? "checked" : "" %> disabled>
       <label for="<%= i + 1 %>"><%= link_to task.title, task_path(task) %></label> -
       <%= link_to "Delete", task_path(task), method: :delete,
       data: { confirm: "Are you sure?" } %>

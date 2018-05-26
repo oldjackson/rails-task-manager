@@ -10,8 +10,10 @@
 </div>
 
 <div class="form-group">
-  <%= f.check_box :completed %>
-  <%= f.label :completed %>
+  <% unless @task.new_record? %>
+    <%= f.check_box :completed %>
+    <%= f.label :completed %>
+  <% end %>
 </div>
 
 <%= f.submit class: 'btn btn-primary' %>
